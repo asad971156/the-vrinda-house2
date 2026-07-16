@@ -293,3 +293,62 @@ scrollTopBtn.addEventListener("click", (e) => {
     });
 
 });
+
+// ==========================
+// Animated Stats Counter
+// ==========================
+
+const counters = document.querySelectorAll(".counter");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+        const target = +counter.dataset.target;
+
+        let count = 0;
+        const speed = target / 80;
+
+        const updateCounter = () => {
+
+            count += speed;
+
+            if (count < target) {
+
+                counter.innerText = Math.ceil(count);
+
+                requestAnimationFrame(updateCounter);
+
+            } else {
+
+                // Final text formatting
+                if (target === 1000) {
+                    counter.innerText = "1000+";
+                } else if (target === 500) {
+                    counter.innerText = "500m";
+                } else if (target === 24) {
+                    counter.innerText = "24×7";
+                } else if (target === 5) {
+                    counter.innerText = "★★★★★";
+                } else {
+                    counter.innerText = target;
+                }
+
+            }
+
+        };
+
+        updateCounter();
+
+        observer.unobserve(counter);
+
+    });
+
+}, {
+    threshold: 0.5
+});
+
+counters.forEach(counter => observer.observe(counter));
