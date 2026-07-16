@@ -189,21 +189,17 @@ nav a.active{
 }
 
 .btn{
-
     display:inline-block;
-
-    text-decoration:none;
-
-    background:#C89B3C;
-
-    color:#fff;
-
-    padding:16px 38px;
-
+    padding:18px 45px;
     border-radius:50px;
-
-    transition:.3s;
-
+    text-decoration:none;
+    font-size:18px;
+    font-weight:700;
+    color:#fff;
+    background:linear-gradient(135deg,#D4AF37,#B8860B);
+    box-shadow:0 0 25px rgba(212,175,55,.55);
+    transition:.35s;
+    animation:pulseGlow 2s infinite;
 }
 
 .btn:hover{
