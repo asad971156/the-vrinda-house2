@@ -9,7 +9,7 @@
 }
 
 html{
-    scroll-behavior:smooth;
+    scroll-behavior:smooth;.btn:hover{
 }
 
 body{
@@ -203,11 +203,8 @@ nav a.active{
 }
 
 .btn:hover{
-
-    transform:translateY(-4px);
-
-    background:#a87f2d;
-
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 0 40px rgba(212,175,55,.8);
 }
 
 
