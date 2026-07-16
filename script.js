@@ -1,28 +1,45 @@
-// ==========================
+// ==============================
 // THE VRINDA HOUSE
-// Premium Script
-// ==========================
+// Premium Hero Slider
+// ==============================
 
-// Hero Slider
+// Elements
 const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
 let current = 0;
 let slider;
 
+
+// ==============================
 // Show Slide
+// ==============================
+
 function showSlide(index){
 
     slides.forEach(slide=>{
         slide.classList.remove("active");
     });
 
+    dots.forEach(dot=>{
+        dot.classList.remove("active");
+    });
+
     slides[index].classList.add("active");
+
+    if(dots[index]){
+        dots[index].classList.add("active");
+    }
 
 }
 
+
+// ==============================
 // Next Slide
+// ==============================
+
 function nextSlide(){
 
     current++;
@@ -35,7 +52,11 @@ function nextSlide(){
 
 }
 
+
+// ==============================
 // Previous Slide
+// ==============================
+
 function prevSlide(){
 
     current--;
@@ -48,7 +69,11 @@ function prevSlide(){
 
 }
 
+
+// ==============================
 // Auto Slider
+// ==============================
+
 function startSlider(){
 
     slider = setInterval(nextSlide,4000);
@@ -57,7 +82,13 @@ function startSlider(){
 
 startSlider();
 
+
+// ==============================
 // Right Arrow
+// ==============================
+
+if(next){
+
 next.addEventListener("click",()=>{
 
     clearInterval(slider);
@@ -68,7 +99,15 @@ next.addEventListener("click",()=>{
 
 });
 
+}
+
+
+// ==============================
 // Left Arrow
+// ==============================
+
+if(prev){
+
 prev.addEventListener("click",()=>{
 
     clearInterval(slider);
@@ -79,10 +118,33 @@ prev.addEventListener("click",()=>{
 
 });
 
+}
 
-// ==========================
+
+// ==============================
+// Slider Dots
+// ==============================
+
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        clearInterval(slider);
+
+        current=index;
+
+        showSlide(current);
+
+        startSlider();
+
+    });
+
+});
+
+
+// ==============================
 // Premium Navbar
-// ==========================
+// ==============================
 
 const header=document.querySelector("header");
 
@@ -101,9 +163,9 @@ window.addEventListener("scroll",()=>{
 });
 
 
-// ==========================
+// ==============================
 // Active Menu + Smooth Scroll
-// ==========================
+// ==============================
 
 const navLinks=document.querySelectorAll('nav a[href^="#"]');
 
