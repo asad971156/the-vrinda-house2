@@ -1,3 +1,13 @@
-window.addEventListener("load", () => {
-  document.body.style.visibility = "visible";
+document.querySelectorAll('nav a').forEach(link => {
+
+    link.addEventListener('click', function(){
+
+        document.querySelectorAll('nav a').forEach(a=>{
+            a.classList.remove('active');
+        });
+
+        this.classList.add('active');
+
+    });
+
 });
