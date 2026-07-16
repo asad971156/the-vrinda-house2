@@ -861,4 +861,17 @@ header.scrolled nav a{
 
 }   
 
+/* =========================
+   Scroll Progress Bar
+========================= */
 
+#progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:4px;
+    background:linear-gradient(90deg,#D4AF37,#C89B3C,#B8860B);
+    z-index:999999;
+    transition:width .15s linear;
+}
