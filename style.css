@@ -771,3 +771,19 @@ nav a.active{
     color:#C89B3C;
 
 }
+
+header:not(.scrolled) .logo{
+    color:#fff;
+}
+
+header:not(.scrolled) nav a{
+    color:#fff;
+}
+
+header.scrolled .logo{
+    color:#8B5E3C;
+}
+
+header.scrolled nav a{
+    color:#333;
+}
