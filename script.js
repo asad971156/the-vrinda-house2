@@ -219,3 +219,17 @@ window.addEventListener("scroll", () => {
     document.getElementById("progress-bar").style.width = progress + "%";
 
 });
+
+
+// ==========================
+// Mobile Hamburger Menu
+// ==========================
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+menuToggle.addEventListener("click", () => {
+
+    nav.classList.toggle("active");
+
+});
