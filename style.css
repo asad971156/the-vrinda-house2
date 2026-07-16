@@ -77,7 +77,7 @@ header{
 
     background:transparent;
 
-    transition:.4s ease;
+    transition:0.4s ease;
 
     z-index:999;
 
@@ -763,5 +763,23 @@ header.scrolled{
     -webkit-backdrop-filter:blur(12px);
 
     box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+header.scrolled{
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+nav a.active{
+
+    color:#C89B3C;
 
 }
