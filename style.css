@@ -756,6 +756,7 @@ nav{
 
 .slide.active{
     opacity:1;
+    transform:scale(1.10);
 }
 
 header.scrolled{
