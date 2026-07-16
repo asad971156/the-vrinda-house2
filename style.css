@@ -916,3 +916,48 @@ header.scrolled nav a{
     }
 
 }
+
+ /* =========================
+   LUXURY PRELOADER
+========================= */
+
+#preloader{
+    position:fixed;
+    inset:0;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    transition:opacity .8s ease, visibility .8s ease;
+}
+
+#preloader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-logo{
+    color:#D4AF37;
+    font-size:38px;
+    font-weight:700;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    animation:loaderGlow 1.5s infinite alternate;
+}
+
+@keyframes loaderGlow{
+
+    from{
+        opacity:.5;
+        transform:scale(.98);
+        text-shadow:0 0 10px rgba(212,175,55,.3);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.05);
+        text-shadow:0 0 25px rgba(212,175,55,.9);
+    }
+
+}  
