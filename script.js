@@ -243,3 +243,19 @@ document.querySelectorAll("nav a").forEach(link => {
     });
 
 });
+
+// ==========================
+// Luxury Preloader
+// ==========================
+
+window.addEventListener("load", () => {
+
+    const preloader = document.getElementById("preloader");
+
+    setTimeout(() => {
+
+        preloader.classList.add("hide");
+
+    }, 1500);
+
+});
