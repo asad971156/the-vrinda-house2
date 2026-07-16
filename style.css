@@ -75,13 +75,11 @@ header{
 
     align-items:center;
 
-    background:rgba(255,255,255,.95);
+    background:transparent;
 
-    backdrop-filter:blur(12px);
+    transition:.4s ease;
 
     z-index:999;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 }
 
@@ -756,3 +754,14 @@ nav{
     opacity:1;
 }
 
+header.scrolled{
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
