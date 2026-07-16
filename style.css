@@ -163,36 +163,6 @@ nav a.active{
     color:white;
 }
 
-.hero-content h1,
-.hero-content p,
-.hero-content .btn{
-
-    opacity:0;
-
-    transform:translateY(50px);
-
-    animation:fadeUp 1s forwards;
-
-}
-
-.hero-content h1{
-
-    animation-delay:.4s;
-
-}
-
-.hero-content p{
-
-    animation-delay:1s;
-
-}
-
-.hero-content .btn{
-
-    animation-delay:1.6s;
-
-}
-
 .hero-content h1{
 
     font-size:64px;
@@ -892,22 +862,3 @@ header.scrolled nav a{
 }   
 
 
-@keyframes fadeUp{
-
-from{
-
-    opacity:0;
-
-    transform:translateY(50px);
-
-}
-
-to{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-}   
