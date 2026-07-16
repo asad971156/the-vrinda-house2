@@ -1,13 +1,17 @@
-document.querySelectorAll('nav a').forEach(link => {
+const slides = document.querySelectorAll(".slide");
 
-    link.addEventListener('click', function(){
+let current = 0;
 
-        document.querySelectorAll('nav a').forEach(a=>{
-            a.classList.remove('active');
-        });
+setInterval(() => {
 
-        this.classList.add('active');
+    slides[current].classList.remove("active");
 
-    });
+    current++;
 
-});
+    if(current >= slides.length){
+        current = 0;
+    }
+
+    slides[current].classList.add("active");
+
+}, 4000);
