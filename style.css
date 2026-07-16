@@ -157,18 +157,39 @@ nav a.active{
 }
 
 .hero-content{
-
     position:relative;
-
     z-index:2;
-
     text-align:center;
+    color:white;
+}
 
-    color:#fff;
+.hero-content h1,
+.hero-content p,
+.hero-content .btn{
 
-    width:90%;
+    opacity:0;
 
-    max-width:900px;
+    transform:translateY(50px);
+
+    animation:fadeUp 1s forwards;
+
+}
+
+.hero-content h1{
+
+    animation-delay:.4s;
+
+}
+
+.hero-content p{
+
+    animation-delay:1s;
+
+}
+
+.hero-content .btn{
+
+    animation-delay:1.6s;
 
 }
 
