@@ -875,3 +875,44 @@ header.scrolled nav a{
     z-index:999999;
     transition:width .15s linear;
 }
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:#8B5E3C;
+    cursor:pointer;
+    user-select:none;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#fff;
+        display:none;
+        flex-direction:column;
+        padding:20px 0;
+        box-shadow:0 10px 25px rgba(0,0,0,.1);
+    }
+
+    nav a{
+        margin:15px 0;
+        text-align:center;
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+}
