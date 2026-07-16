@@ -788,3 +788,38 @@ header.scrolled .logo{
 header.scrolled nav a{
     color:#333;
 }
+
+/* Hero Slider Arrows */
+
+.prev,
+.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.20);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+    transition:.3s;
+    z-index:5;
+}
+
+.prev{
+    left:30px;
+}
+
+.next{
+    right:30px;
+}
+
+.prev:hover,
+.next:hover{
+    background:#C89B3C;
+    transform:translateY(-50%) scale(1.08);
+}
