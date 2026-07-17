@@ -62,7 +62,7 @@ header{
     top:48px;
     left:0;
     width:100%;
-    padding:18px 8%;
+    padding:14px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -80,7 +80,7 @@ header.scrolled{
 }
 
 .logo{
-    font-size:28px;
+    font-size:24px;
     font-weight:700;
     letter-spacing:2px;
     color:#fff;
@@ -185,19 +185,19 @@ nav a.active{
 }
 
 .hero-content p{
-
-    font-size:24px;
-
-    margin-bottom:35px;
-
+    font-size:20px;
+    line-height:1.7;
+    max-width:700px;
+    margin:0 auto 35px;
+    color:rgba(255,255,255,.92);
 }
 
 .btn{
     display:inline-block;
-    padding:18px 45px;
+    padding:16px 38px;
     border-radius:50px;
     text-decoration:none;
-    font-size:18px;
+    font-size:16px;
     font-weight:700;
     color:#fff;
     background:linear-gradient(135deg,#D4AF37,#B8860B);
