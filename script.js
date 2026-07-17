@@ -12,135 +12,57 @@ const next = document.querySelector(".next");
 let current = 0;
 let slider;
 
-
-// ==============================
-// Show Slide
-// ==============================
-
 function showSlide(index){
-
-    slides.forEach(slide=>{
-        slide.classList.remove("active");
-    });
-
-    dots.forEach(dot=>{
-        dot.classList.remove("active");
-    });
+    slides.forEach(slide=>slide.classList.remove("active"));
+    dots.forEach(dot=>dot.classList.remove("active"));
 
     slides[index].classList.add("active");
 
     if(dots[index]){
         dots[index].classList.add("active");
     }
-
 }
-
-
-// ==============================
-// Next Slide
-// ==============================
 
 function nextSlide(){
-
     current++;
-
-    if(current >= slides.length){
-        current = 0;
-    }
-
+    if(current>=slides.length) current=0;
     showSlide(current);
-
 }
-
-
-// ==============================
-// Previous Slide
-// ==============================
 
 function prevSlide(){
-
     current--;
-
-    if(current < 0){
-        current = slides.length - 1;
-    }
-
+    if(current<0) current=slides.length-1;
     showSlide(current);
-
 }
 
-
-// ==============================
-// Auto Slider
-// ==============================
-
 function startSlider(){
-
-    slider = setInterval(nextSlide,4000);
-
+    clearInterval(slider);
+    slider=setInterval(nextSlide,4000);
 }
 
 startSlider();
 
-
-// ==============================
-// Right Arrow
-// ==============================
-
 if(next){
-
-next.addEventListener("click",()=>{
-
-    clearInterval(slider);
-
-    nextSlide();
-
-    startSlider();
-
-});
-
+    next.addEventListener("click",()=>{
+        nextSlide();
+        startSlider();
+    });
 }
-
-
-// ==============================
-// Left Arrow
-// ==============================
 
 if(prev){
-
-prev.addEventListener("click",()=>{
-
-    clearInterval(slider);
-
-    prevSlide();
-
-    startSlider();
-
-});
-
+    prev.addEventListener("click",()=>{
+        prevSlide();
+        startSlider();
+    });
 }
 
-
-// ==============================
-// Slider Dots
-// ==============================
-
 dots.forEach((dot,index)=>{
-
     dot.addEventListener("click",()=>{
-
-        clearInterval(slider);
-
         current=index;
-
         showSlide(current);
-
         startSlider();
-
     });
-
 });
-
 
 // ==============================
 // Premium Navbar
@@ -151,17 +73,12 @@ const header=document.querySelector("header");
 window.addEventListener("scroll",()=>{
 
     if(window.scrollY>50){
-
         header.classList.add("scrolled");
-
     }else{
-
         header.classList.remove("scrolled");
-
     }
 
 });
-
 
 // ==============================
 // Active Menu + Smooth Scroll
@@ -191,11 +108,8 @@ navLinks.forEach(link=>{
         20;
 
         window.scrollTo({
-
             top:target.offsetTop-offset,
-
             behavior:"smooth"
-
         });
 
     });
@@ -206,20 +120,19 @@ navLinks.forEach(link=>{
 // Scroll Progress Bar
 // ==========================
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-    const scrollTop = document.documentElement.scrollTop;
+    const scrollTop=document.documentElement.scrollTop;
 
-    const scrollHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
+    const scrollHeight=
+    document.documentElement.scrollHeight-
+    document.documentElement.clientHeight;
 
-    const progress = (scrollTop / scrollHeight) * 100;
+    const progress=(scrollTop/scrollHeight)*100;
 
-    document.getElementById("progress-bar").style.width = progress + "%";
+    document.getElementById("progress-bar").style.width=progress+"%";
 
 });
-
 
 // ==========================
 // Mobile Hamburger Menu
@@ -228,20 +141,16 @@ window.addEventListener("scroll", () => {
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("nav");
 
-menuToggle.addEventListener("click", () => {
-
-    nav.classList.toggle("active");
-
-});
+if(menuToggle){
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+}
 
 document.querySelectorAll("nav a").forEach(link => {
-
     link.addEventListener("click", () => {
-
         nav.classList.remove("active");
-
     });
-
 });
 
 // ==========================
@@ -252,11 +161,15 @@ window.addEventListener("load", () => {
 
     const preloader = document.getElementById("preloader");
 
-    setTimeout(() => {
+    if(preloader){
 
-        preloader.classList.add("hide");
+        setTimeout(() => {
 
-    }, 1500);
+            preloader.classList.add("hide");
+
+        }, 1200);
+
+    }
 
 });
 
@@ -268,87 +181,108 @@ const scrollTopBtn = document.querySelector(".scroll-top");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 400) {
+    if(scrollTopBtn){
 
-        scrollTopBtn.classList.add("show");
-
-    } else {
-
-        scrollTopBtn.classList.remove("show");
+        if(window.scrollY > 400){
+            scrollTopBtn.classList.add("show");
+        }else{
+            scrollTopBtn.classList.remove("show");
+        }
 
     }
 
 });
 
-scrollTopBtn.addEventListener("click", (e) => {
+if(scrollTopBtn){
 
-    e.preventDefault();
+    scrollTopBtn.addEventListener("click", (e) => {
 
-    window.scrollTo({
+        e.preventDefault();
 
-        top: 0,
-
-        behavior: "smooth"
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
 
     });
 
-});
+}
 
 // ==========================
 // Animated Stats Counter
 // ==========================
 
 const counters = document.querySelectorAll(".counter");
+let counterStarted = false;
 
-const observer = new IntersectionObserver((entries) => {
+function startCounters(){
 
-    entries.forEach(entry => {
+    if(counterStarted) return;
 
-        if (!entry.isIntersecting) return;
+    const stats = document.querySelector(".stats");
 
-        const counter = entry.target;
-        const target = +counter.dataset.target;
+    if(!stats) return;
 
-        let count = 0;
-        const speed = target / 80;
+    const top = stats.getBoundingClientRect().top;
 
-        const updateCounter = () => {
+    if(top < window.innerHeight - 100){
 
-            count += speed;
+        counterStarted = true;
 
-            if (count < target) {
+        counters.forEach(counter=>{
 
-                counter.innerText = Math.ceil(count);
+            const target = Number(counter.dataset.target);
 
-                requestAnimationFrame(updateCounter);
+            let count = 0;
 
-            } else {
+            const step = Math.max(1, Math.ceil(target/80));
 
-                // Final text formatting
-                if (target === 1000) {
-                    counter.innerText = "1000+";
-                } else if (target === 500) {
-                    counter.innerText = "500m";
-                } else if (target === 24) {
-                    counter.innerText = "24×7";
-                } else if (target === 5) {
-                    counter.innerText = "★★★★★";
-                } else {
-                    counter.innerText = target;
+            function update(){
+
+                count += step;
+
+                if(count < target){
+
+                    counter.innerText = count;
+
+                    requestAnimationFrame(update);
+
+                }else{
+
+                    switch(target){
+
+                        case 1000:
+                            counter.innerText="1000+";
+                            break;
+
+                        case 500:
+                            counter.innerText="500m";
+                            break;
+
+                        case 24:
+                            counter.innerText="24×7";
+                            break;
+
+                        case 5:
+                            counter.innerText="★★★★★";
+                            break;
+
+                        default:
+                            counter.innerText=target;
+
+                    }
+
                 }
 
             }
 
-        };
+            update();
 
-        updateCounter();
+        });
 
-        observer.unobserve(counter);
+    }
 
-    });
+}
 
-}, {
-    threshold: 0.5
-});
-
-counters.forEach(counter => observer.observe(counter));
+window.addEventListener("scroll", startCounters);
+window.addEventListener("load", startCounters);
