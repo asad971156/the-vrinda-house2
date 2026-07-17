@@ -57,22 +57,6 @@ body{
    HEADER
 ========================= */
 
-<header>
-    <div class="logo">
-        <h2>THE VRINDA HOUSE</h2>
-        <span>Luxury Stay</span>
-    </div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#amenities">Amenities</a>
-        <a href="#nearby">Nearby</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
 nav a.active{
     color:#C89B3C;
 }
@@ -739,6 +723,18 @@ header.scrolled .logo{
 
 header.scrolled nav a{
     color:#333;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    z-index:9999;
 }
 
 /* Hero Slider Arrows */
