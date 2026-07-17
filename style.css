@@ -57,79 +57,21 @@ body{
    HEADER
 ========================= */
 
-header{
-    position:fixed;
-    top:48px;
-    left:0;
-    width:100%;
-    padding:12px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-    transition:all .4s ease;
-    z-index:999;
-}
+<header>
+    <div class="logo">
+        <h2>THE VRINDA HOUSE</h2>
+        <span>Luxury Stay</span>
+    </div>
 
-header.scrolled{
-    background:#ffffff;
-    box-shadow:0 8px 25px rgba(0,0,0,.10);
-    padding:14px 8%;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:600;
-    letter-spacing:1px;
-    color:#fff;
-    transition:.4s;
-}
-
-header.scrolled .logo{
-    color:#111;
-}
-
-nav{
-    display:flex;
-    align-items:center;
-    gap:22px;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:500;
-    font-size:15px;
-    position:relative;
-    transition:.3s;
-}
-
-header.scrolled nav a{
-    color:#111;
-}
-
-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:#C89B3C;
-    transition:.3s;
-}
-
-nav a:hover::after{
-    width:100%;
-}
-
-nav a:hover{
-
-    color:#C89B3C;
-
-}
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#nearby">Nearby</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
 nav a.active{
     color:#C89B3C;
