@@ -62,7 +62,7 @@ header{
     top:48px;
     left:0;
     width:100%;
-    padding:14px 8%;
+    padding:12px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -80,9 +80,9 @@ header.scrolled{
 }
 
 .logo{
-    font-size:24px;
-    font-weight:700;
-    letter-spacing:2px;
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:1px;
     color:#fff;
     transition:.4s;
 }
@@ -157,13 +157,13 @@ nav a.active{
 }
 
 .overlay{
-
     position:absolute;
-
     inset:0;
-
-    background:rgba(0,0,0,.45);
-
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.55)
+    );
 }
 
 .hero-content{
