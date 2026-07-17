@@ -353,11 +353,12 @@ section{
 
 .card{
     background:#fff;
-    padding:35px;
-    border-radius:18px;
+    padding:40px 32px;
+    border-radius:16px;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.35s;
+    border:1px solid rgba(0,0,0,.06);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:all .4s ease;
 }
 
 .card:hover{
