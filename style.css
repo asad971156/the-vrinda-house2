@@ -174,10 +174,13 @@ nav a.active{
 }
 
 .hero-content h1{
-
-    font-size:64px;
-
-    margin-bottom:20px;
+    font-size:58px;
+    font-weight:600;
+    line-height:1.15;
+    letter-spacing:-1px;
+    max-width:850px;
+    margin:0 auto 20px;
+}
 
 }
 
