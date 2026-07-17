@@ -93,13 +93,15 @@ header.scrolled .logo{
 
 nav{
     display:flex;
-    gap:30px;
+    align-items:center;
+    gap:22px;
 }
 
 nav a{
     color:#fff;
     text-decoration:none;
     font-weight:500;
+    font-size:15px;
     position:relative;
     transition:.3s;
 }
@@ -170,7 +172,10 @@ nav a.active{
     position:relative;
     z-index:2;
     text-align:center;
-    color:white;
+    color:#fff;
+    max-width:780px;
+    margin:0 auto;
+    padding:0 20px;
 }
 
 .hero-content h1{
@@ -179,8 +184,6 @@ nav a.active{
     line-height:1.2;
     max-width:700px;
     margin:0 auto 18px;
-}
-
 }
 
 .hero-content p{
@@ -193,21 +196,21 @@ nav a.active{
 
 .btn{
     display:inline-block;
-    padding:14px 32px;
-    border-radius:50px;
+    padding:15px 36px;
+    border-radius:8px;
     text-decoration:none;
     font-size:15px;
-    font-weight:700;
+    font-weight:600;
     color:#fff;
     background:linear-gradient(135deg,#D4AF37,#B8860B);
-    box-shadow:0 0 25px rgba(212,175,55,.55);
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
     transition:.35s;
-    animation:pulseGlow 2s infinite;
+    
 }
 
 .btn:hover{
-    transform:translateY(-5px) scale(1.05);
-    box-shadow:0 0 40px rgba(212,175,55,.8);
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(0,0,0,.25);
 }
 
 
@@ -266,7 +269,7 @@ section{
     padding:35px;
     border-radius:18px;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
     transition:.35s;
 }
 
