@@ -1001,3 +1001,50 @@ header.scrolled nav a{
     font-size:18px;
     letter-spacing:.5px;
 }
+
+/* Footer CSS */
+.footer{
+   ...
+}
+
+/* WhatsApp Button */
+.whatsapp-float{
+   ...
+}
+
+/* 👇 Iske baad ye naya code paste karo */
+
+.hero-tag{
+display:inline-block;
+padding:8px 18px;
+background:rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.3);
+border-radius:30px;
+backdrop-filter:blur(10px);
+margin-bottom:20px;
+font-size:14px;
+letter-spacing:1px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.btn-outline{
+padding:14px 32px;
+border:2px solid #fff;
+border-radius:50px;
+color:#fff;
+text-decoration:none;
+transition:.4s;
+font-weight:600;
+}
+
+.btn-outline:hover{
+background:#fff;
+color:#000;
+}
