@@ -208,6 +208,62 @@ nav a.active{
     transform:translateY(-3px);
 }
 
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.btn-outline{
+    background:transparent;
+    border:2px solid #fff;
+    color:#fff;
+}
+
+.btn-outline:hover{
+    background:#fff;
+    color:#8B5E3C;
+}
+
+.scroll-down{
+    position:absolute;
+    left:50%;
+    bottom:30px;
+    transform:translateX(-50%);
+    text-align:center;
+    color:#fff;
+    z-index:10;
+    animation:floatDown 2s infinite;
+}
+
+.scroll-down span{
+    display:block;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+    text-transform:uppercase;
+}
+
+.scroll-down i{
+    font-size:22px;
+}
+
+@keyframes floatDown{
+    0%{
+        transform:translateX(-50%) translateY(0);
+    }
+    50%{
+        transform:translateX(-50%) translateY(10px);
+    }
+    100%{
+        transform:translateX(-50%) translateY(0);
+    }
+}
+
+
+
 .prev,
 .next{
     position:absolute;
